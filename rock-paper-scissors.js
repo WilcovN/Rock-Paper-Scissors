@@ -48,10 +48,10 @@ function playRound(humanChoice, computerChoice) {
     }else if ((humanChoice == "Rock" && computerChoice == "Paper") || 
     (humanChoice == "Paper" && computerChoice == "Scissors") || 
     (humanChoice == "Scissors" && computerChoice == "Rock")) {
-        console.log('You lose! ' + computerChoice + " beats " + humanChoice)
+        alert('You lose! ' + computerChoice + " beats " + humanChoice)
         computerScore += 1;
     }else {
-        console.log('You win! ' + humanChoice + " beats " + computerChoice)
+        alert('You win! ' + humanChoice + " beats " + computerChoice)
         humanScore += 1;
     }
 }
@@ -65,14 +65,15 @@ function playGame() {
     for (let i = 0; i < 5; i++){
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection)
+        playRound(humanSelection, computerSelection);
+        alert(`Round ${i+1} of 5`)
     }
     if (humanScore > computerScore) {
-        return console.log(`You won! The score is ${humanScore}:${computerScore}`)
+        return alert(`You won! The score is ${humanScore}:${computerScore}`)
     } else if (humanScore == computerScore){
-        return console.log(`It's a draw! The score is ${computerScore}:${humanScore}`)
+        return alert(`It's a draw! The score is ${computerScore}:${humanScore}`)
     } else {
-        return console.log(`You lose! The score is ${computerScore}:${humanScore}`)
+        return alert(`You lose! The score is ${computerScore}:${humanScore}`)
     }
 }
 
