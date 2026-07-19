@@ -56,7 +56,24 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
 
 // playRound(humanSelection, computerSelection);
+
+function playGame() {
+    for (let i = 0; i < 5; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection)
+    }
+    if (humanScore > computerScore) {
+        return console.log(`You won! The score is ${humanScore}:${computerScore}`)
+    } else if (humanScore == computerScore){
+        return console.log(`It's a draw! The score is ${computerScore}:${humanScore}`)
+    } else {
+        return console.log(`You lose! The score is ${computerScore}:${humanScore}`)
+    }
+}
+
+playGame();
